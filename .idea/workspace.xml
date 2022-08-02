@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="59da70a8-4eb7-4f80-909b-4f2d146c5779" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/colors/ConsoleColors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/colors/ConsoleColors.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,12 +34,12 @@
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="pl.coderslab.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pl.coderslab.Main" />
       <module name="Workshop" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pl.coderslab.*" />
+          <option name="PATTERN" value="pl.coderslab.colors.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -49,7 +49,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.pl.coderslab.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -61,7 +61,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1659474883176</updated>
-      <workItem from="1659474884772" duration="376000" />
+      <workItem from="1659474884772" duration="1513000" />
     </task>
     <servers />
   </component>
