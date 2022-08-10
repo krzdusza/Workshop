@@ -167,10 +167,7 @@ public class TaskManager {
         System.out.println("Please select number to remove");
         delTask = scanner.nextLine();
         System.out.println("Value was successfully deleted");
-<<<<<<< HEAD
 
-=======
->>>>>>> e0a405e6b72f09fd02903f9830fdcf0fa9688492
 
     }
 
