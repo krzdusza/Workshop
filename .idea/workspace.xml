@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="59da70a8-4eb7-4f80-909b-4f2d146c5779" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/TaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,11 +31,16 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/KD/REPO/Workshop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/KD/REPO/ONL_JEE_W_17_Podstawy_Java_Praca_Domowa_rozwiazanie&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JAVA&quot;
+    ]
   }
 }</component>
   <component name="RunManager" selected="Application.TaskManager">
@@ -63,9 +70,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Scratch" type="Java Scratch" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Scratch" />
+      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.TaskManager" />
+        <item itemvalue="Java Scratch.Scratch" />
         <item itemvalue="Application.pl.coderslab.Main" />
       </list>
     </recent_temporary>
@@ -82,6 +97,12 @@
       <workItem from="1659476881134" duration="76000" />
       <workItem from="1659624531321" duration="8879000" />
       <workItem from="1659699733552" duration="621000" />
+      <workItem from="1659767888618" duration="6221000" />
+      <workItem from="1659849399374" duration="31839000" />
+      <workItem from="1659939259939" duration="13313000" />
+      <workItem from="1660122291238" duration="12914000" />
+      <workItem from="1660140070704" duration="4569000" />
+      <workItem from="1660158072371" duration="5298000" />
     </task>
     <servers />
   </component>
@@ -98,5 +119,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="scanner" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
