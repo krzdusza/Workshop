@@ -5,7 +5,6 @@ import org.apache.commons.lang3.ArrayUtils;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.util.Arrays;
 import java.util.Scanner;
 
 import static pl.coderslab.colors.ConsoleColors.*;
@@ -118,9 +117,34 @@ public class TaskManager {
         for (int i = 0; i < tasks().length; i++) {
             System.out.print(PURPLE_BOLD + i + " : " + RESET);
             for (int j = 0; j < tasks()[i].length; j++) {
-                System.out.print(tasks()[i][j] + ", ");
+                System.out.print(tasks()[i][j] + " ");
             }
             System.out.println();
+        }
+    }
+
+    public static void writeToFile() {
+        try (PrintWriter printWriter = new PrintWriter("tasks.csv")) {
+            for (int i = 0; i < tasks.length; i++) {
+                for (int j = 0; j < tasks[i].length; j++) {
+                    printWriter.print(tasks[i][j] + ",");
+                }
+                printWriter.println();
+            }
+        } catch (FileNotFoundException ex) {
+            System.err.println("Błąd zapisu do pliku: " + ex.getLocalizedMessage());
+        }
+    }
+
+    public static void inProgress() {
+        try {
+            System.out.println(YELLOW_BOLD + "In progress. Please wait...... " + RESET);
+            for (int i = 0; i <= 100; i++) {
+                System.out.print(CYAN_BOLD + "\r" + i + "%" + RESET);
+                Thread.sleep(50);
+            }
+        } catch (InterruptedException e) {
+            System.err.println("error: " + e.getLocalizedMessage());
         }
     }
 
@@ -132,46 +156,57 @@ public class TaskManager {
         do {
             System.out.println("Please add task description");
             newTask = scanner.nextLine();
+            if (newTask.isEmpty()) {
+                System.out.println(RED_BOLD + "Nothing was introduced...." + RESET);
+            }
         } while (newTask.isEmpty());
         do {
             System.out.println("Please add task due date (format: YYYY-MM-DD)");
             newDate = scanner.nextLine();
+            if (!(newDate.startsWith("2") && newDate.startsWith("-", 4) && newDate.startsWith("-", 7))) {
+                System.out.println(RED_BOLD + "Incorrect format. Please use format: YYYY-MM-DD" + RESET);
+            }
         } while (!(newDate.startsWith("2") && newDate.startsWith("-", 4) && newDate.startsWith("-", 7)));
         do {
             System.out.println("Is your task is important: true/false");
             newImportant = scanner.nextLine();
-        } while (!("true".equals(newImportant) || "false".equals(newImportant)));
-
-        tasks = ArrayUtils.add(tasks(), new String[]{newTask, newDate, newImportant});
-
-        try (PrintWriter printWriter = new PrintWriter("tasks.csv")) {
-            for (int i = 0; i < tasks.length; i++) {
-                for (int j = 0; j < tasks[i].length; j++) {
-                    printWriter.print(tasks[i][j] + ",");
-                }
-                printWriter.println();
+            if (!("true".equals(newImportant) || "false".equals(newImportant))) {
+                System.out.println(RED_BOLD + "Incorrect value. Please use true or false." + RESET);
             }
-        } catch (FileNotFoundException ex) {
-            System.err.println("Błąd zapisu do pliku: " + ex.getLocalizedMessage());
-        }
-        System.out.println();
-        System.out.println(GREEN_BOLD + "Correct. Task was added." + RESET);
-        System.out.println();
-
+        } while (!("true".equals(newImportant) || "false".equals(newImportant)));
+        tasks = ArrayUtils.add(tasks(), new String[]{newTask, newDate, newImportant});
+        inProgress();
+        System.out.println("\n" + GREEN_BOLD + "Correct. Task was added." + RESET);
+        writeToFile();
         tasks();
     }
 
     public static void removeTask() {
+        fileLinesCounter();
         Scanner scanner = new Scanner(System.in);
-        String delTask;
-        System.out.println("Please select number to remove");
-        delTask = scanner.nextLine();
-        System.out.println("Value was successfully deleted");
+        int delTask;
+        System.out.println("Please select number to remove -> from 0 to " + (fileLinesCounter() - 1));
 
+        do {
+            while (!scanner.hasNextInt()) {
+                scanner.nextLine();
+                System.out.println(RED_BOLD + "Incorrect type. Please insert a number." + RESET);
+            }
+            delTask = scanner.nextInt();
+            if (!((delTask >= 0) && (delTask < fileLinesCounter()))) {
+                System.out.println(RED_BOLD + "Incorrect value. Please select a number from 0 to " + (fileLinesCounter() - 1) + RESET);
+            }
+        } while (!((delTask >= 0) && (delTask < fileLinesCounter())));
 
+        tasks = ArrayUtils.remove(tasks(), delTask);
+        inProgress();
+        System.out.println("\n" + GREEN_BOLD + "Task was successfully deleted." + RESET);
+        writeToFile();
+        tasks();
     }
 
     public static void exitTask() {
         System.out.print(RED + " Bye, bye. " + RESET);
+        writeToFile();
     }
 }
